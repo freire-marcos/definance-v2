@@ -1,14 +1,14 @@
-import { Button } from "@mui/material"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { SideMenu } from "../shared/components/SideMenu"
+import { Button } from '@mui/material';
+import { Route, Routes } from 'react-router-dom';
+import { Compteste } from '../pages/Compteste';
+import { Home } from '../pages/Home';
 
 export const AppRoutes: React.FC = ({ children }) => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Button>click</Button>} />
-        <Route path='/teste' element={<SideMenu />} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/teste' element={<h2>link errado, otário</h2>} />
+      <Route path='/nova' element={<Compteste />} />
+    </Routes>
+  );
+};

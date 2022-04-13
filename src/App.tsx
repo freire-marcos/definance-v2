@@ -1,10 +1,13 @@
-import { AppRoutes } from "./routes/AppRoutes"
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './routes/AppRoutes';
+import { SideMenu } from './shared/components';
 
 export const App = () => {
   return (
-    <AppRoutes>
-      <p>teste</p>
-    </AppRoutes>
-
+    <BrowserRouter>
+      <SideMenu>
+        <AppRoutes />
+      </SideMenu>
+    </BrowserRouter>
   );
-}
+};
