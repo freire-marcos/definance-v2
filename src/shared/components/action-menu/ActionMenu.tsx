@@ -27,13 +27,13 @@ export const ActionMenu = () => {
           width='20%'
           sx={{ fontSize: 22 }}
         >
-          <Button onClick={handleOpen}><Icon>shopping_cart_outlined</Icon></Button>
+          <ModalCustoAdd />
           <Icon>attach_money_outlined</Icon>
           <Icon>add_circle_outline</Icon>
         </Box>
       </Box>
       {
-        open && (<ModalCustoAdd isOpen={open} />)
+        open && (<ModalCustoAdd />)
       }
     </>
   );
