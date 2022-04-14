@@ -10,6 +10,8 @@ import {
   ListItemIcon, 
   ListItemText 
 } from '@mui/material';
+import { useTheme } from '@mui/system';
+import { ActionMenu } from '../action-menu/ActionMenu';
 
 export const SideMenu: React.FC = ({ children }) => {
   const menuList = [
@@ -18,11 +20,13 @@ export const SideMenu: React.FC = ({ children }) => {
     {text: 'Despesas', icon: 'attach_money_outlined', id: 3, route: '/nova'}, 
     {text: 'Configurações', icon: 'settings_outlined', id: 4, route: '/'}, 
   ];
+
+  const theme = useTheme();
   return (
-    <Box display='flex' width='100vw' height='100vh'>
+    <>
       <Drawer variant='permanent'>
         <Box 
-          width='240px' 
+          width={theme.spacing(28)}
           height='20%' 
           display='flex' 
           flexDirection='column' 
@@ -41,7 +45,7 @@ export const SideMenu: React.FC = ({ children }) => {
         >
           <List component='nav'>
             {
-              menuList.map((menu) => {
+              menuList.map(menu => {
                 return (
                   <Link key={menu.id} style={{ textDecoration: 'none' }} href={menu.route}>
                     <ListItemButton>
@@ -57,11 +61,23 @@ export const SideMenu: React.FC = ({ children }) => {
           </List>
         </Box>       
       </Drawer>
-      <Box display='flex' height='100%' width='80%' marginLeft='250px'>
-        {children}
-      </Box>
+      <Box 
+        display='flex' 
+        height='100%' 
+        marginLeft={theme.spacing(28)}
+        flexDirection='column'
+      >
+        <ActionMenu />
 
-    </Box>
+        <Box
+          display='flex'
+          marginTop={theme.spacing(8)}
+        >
+          {children}
+
+        </Box>
+      </Box>
+    </>
     
   );
 };

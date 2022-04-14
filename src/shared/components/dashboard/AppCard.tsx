@@ -1,12 +1,5 @@
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-import { fontSize, width } from '@mui/system';
 
-// interface IAppCard {
-//   width: string;
-//   fontSize: string;  
-//   color: string;
-//   variant: string;
-// }
 export const AppCard = () => {
   return (
     <Card sx={{ minWidth: 275 }}>
@@ -15,7 +8,7 @@ export const AppCard = () => {
           Vejamos isso
         </Typography>
         <Typography variant="h5" component="div">
-          Caralho
+          Teste
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           adjective
